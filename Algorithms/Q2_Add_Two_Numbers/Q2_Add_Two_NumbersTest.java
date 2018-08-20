@@ -25,10 +25,11 @@ class Q2_Add_Two_NumbersTest {
 		l1.next = new ListNode(4); l1.next.next = new ListNode(3);
 		ListNode l2 = new ListNode(5);
 		l2.next = new ListNode(6); l2.next.next = new ListNode(4);
+		
 		ListNode expected = new ListNode(7);
 		expected.next = new ListNode(0); expected.next.next = new ListNode(8);
-		ListNode result;
 		
+		ListNode result;
 		result = Q2_Add_Two_Numbers.addTwoNumbers(l1, l2);
 		
 		Assert.assertTrue((result.val == expected.val) && (result.next.val == expected.next.val));
@@ -41,22 +42,28 @@ class Q2_Add_Two_NumbersTest {
 		l1.next = new ListNode(1);
 		ListNode l2 = new ListNode(0);
 		l2.next = new ListNode(1); l2.next.next = new ListNode(2);
-		ListNode result, expected;
 		
+		ListNode expected = new ListNode(0); 
+		expected.next = new ListNode(2); expected.next.next = new ListNode(2);
+		
+		ListNode result;
 		result = Q2_Add_Two_Numbers.addTwoNumbers(l1, l2);
-		fail("Not yet implemented"); // TODO
+		
+		Assert.assertTrue((result.val == expected.val) && (result.next.val == expected.next.val));
 	}
 	
 	@Test
 	void testOneNullList() {
 		ListNode l1 = null;
-		ListNode result;
 		ListNode l2 = new ListNode(0);
 		l2.next = new ListNode(1);
 		
+		ListNode expected = new ListNode(0); expected.next = new ListNode(1);
 		
+		ListNode result;
 		result = Q2_Add_Two_Numbers.addTwoNumbers(l1, l2);
-		fail("Not yet implemented"); // TODO
+		
+		Assert.assertTrue((result.val == expected.val) && (result.next.val == expected.next.val));
 	}
 	
 	@Test
@@ -64,10 +71,13 @@ class Q2_Add_Two_NumbersTest {
 		ListNode l1 = new ListNode(9);
 		l1.next = new ListNode(9);
 		ListNode l2 = new ListNode(1);
-		ListNode result;
 		
+		ListNode expected = new ListNode(0);
+		expected.next = new ListNode(0); expected.next.next = new ListNode(1);
+		
+		ListNode result;
 		result = Q2_Add_Two_Numbers.addTwoNumbers(l1, l2);
-		fail("Not yet implemented"); // TODO
-	}
-
+				
+		Assert.assertTrue((result.val == expected.val) && (result.next.val == expected.next.val));
+		}
 }
