@@ -38,11 +38,14 @@ public class Q8_Solution {
 	public static int myAtoi(String str) {
 		int index = 0, sign = 1, total = 0;
 		//1. Empty string
-		if(str.length() == 0) return 0;
+		if(str.length() == 0) 
+			return 0;
 
 		//2. Remove Spaces
-		while(str.charAt(index) == ' ' && index < str.length())
+		while(index < str.length() && str.charAt(index) == ' ')
 			index ++;
+		
+		if (index == str.length()) return 0;
 
 		//3. Handle signs
 		if(str.charAt(index) == '+' || str.charAt(index) == '-'){
